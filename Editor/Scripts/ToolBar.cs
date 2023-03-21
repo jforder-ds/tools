@@ -1,11 +1,15 @@
 using UnityEditor;
+using UnityEditor.ShortcutManagement;
+using UnityEngine;
 
 namespace FourDoor
 {
     public static class ToolBar
     {
         private const string RootName = "FD";
-        
+
+        #region Project Setup
+
         [MenuItem(RootName + "/Project/Setup Project")]
         public static void FullProjectDefaults()
         {
@@ -24,7 +28,11 @@ namespace FourDoor
         {
             FolderStructure.CreateDefaultFolderStructure();
         }
+
+        #endregion
         
+        #region Packages
+
         [MenuItem(RootName + "/Packages/Default Project Packages")]
         public static async void LoadDefaultPackages()
         {
@@ -101,5 +109,17 @@ namespace FourDoor
         {
             Packages.InstallUnityPackage("shadergraph");
         }
+
+        #endregion
+
+        #region EditorHotkeys
+        
+        [Shortcut("Escape", KeyCode.KeypadEnter, ShortcutModifiers.Alt)]
+        public static void EnterPlayMode()
+        {
+            EditorApplication.isPlaying = true;
+        }
+        
+        #endregion
     }
 }
