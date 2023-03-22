@@ -1,8 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEditor.SceneManagement;
-using UnityEngine;
-using UnityEngine.SceneManagement;
 using static UnityEditor.AssetDatabase;
 using static UnityEngine.Application;
 using static System.IO.Path;
