@@ -114,10 +114,16 @@ namespace FourDoor
 
         #region EditorHotkeys
         
-        [Shortcut("Escape", KeyCode.KeypadEnter, ShortcutModifiers.Alt)]
+        [Shortcut("Enter Play Mode", KeyCode.KeypadEnter, ShortcutModifiers.Alt)]
         public static void EnterPlayMode()
         {
             EditorApplication.isPlaying = true;
+        }
+
+        [Shortcut("Toggle Inspector Debug Mode", KeyCode.D, ShortcutModifiers.Alt)]
+        public static void ToggleInspectorDebugMode()
+        {
+            Inspector.ToggleDebugMode();
         }
         
         #endregion
