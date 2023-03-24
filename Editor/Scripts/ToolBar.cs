@@ -125,6 +125,18 @@ namespace FourDoor
         {
             Inspector.ToggleDebugMode();
         }
+
+        [Shortcut("Reset Transform", KeyCode.R, ShortcutModifiers.Shift)]
+        public static void ResetTransform()
+        {
+            var selected = Selection.activeTransform;
+
+            if (selected != null)
+            {
+                selected.SetPositionAndRotation(Vector3.zero, Quaternion.identity);
+                selected.localScale = Vector3.one;
+            }
+        }
         
         #endregion
     }
